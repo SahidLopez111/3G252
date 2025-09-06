@@ -1,0 +1,116 @@
+@startuml bomberman
+class BomberMan
+{
+- int Jugador [2]
+- Mapa [2]
+- int Posicion []
+- Menu [2]
+- int Objeto [4]
+}
+class Jugador
+class BomMan
+{
+- Int Vidas [3]
+- Double Velocidad []
+- Int CantidadBomba [3]
+- int Posicion x []
+- int Posicion y []
++ Objeto ()
+}
+class Vidas
+class CantidadBomba
+{
+int Bomba[5]
+}
+class Bomba
+{
+- int Posicion x[]
+- int Posicion y[]
+- Temporizador [4]
++ RomperRoca (RocaRompible)
+}
+class TamañoExplocion
+{
+- int Posicion x[]
+- int Posicion y[]
+}
+class RomperRoca
+{
++ SoltarObjeto(Objeto)
+}
+class SoltarObjeto 
+class Temporizador
+class Velocidad
+class Objeto
+{
+- int Nivel []
+- int Posicion x[]
+- int Posicion y[]
+}
+class Nivel
+class BotaVelocidad
+{
++ Velocidad(velocidad+1)
+}
+class AumentoExplocion
+class BotaPatear
+class MejoraCantidadBomba
+{
++ CantidadBomba(Bomba+1)
+}
+class Desplazamiento
+class Posicion
+class Menu 
+class Pause
+class Mapa
+class RocaInrrompible
+{
+- int Posicion x[]
+- int Posicion y[]
+}
+class RocaRompible
+{
+- int Posicion x[]
+- int Posicion y[]
+}
+class Inicio
+
+BomberMan *-- Jugador
+BomberMan *--Mapa
+Mapa *-- RocaInrrompible
+Mapa *-- RocaRompible
+Jugador o-- BomMan
+BomMan *-- CantidadBomba
+BomMan o-- Objeto
+BomMan *-- Vidas
+BomMan*-- Velocidad
+CantidadBomba o-- Bomba
+Bomba *-- TamañoExplocion
+Bomba *-- Temporizador
+Bomba o-- RomperRoca
+RomperRoca *-- SoltarObjeto
+Posicion --* BomMan
+Posicion --* Bomba
+Posicion --* TamañoExplocion
+Posicion --* RocaInrrompible
+Posicion --* RocaRompible
+BomberMan *-- Mapa
+BomberMan *-- Objeto
+Objeto *-- Nivel 
+Objeto <|-- BotaVelocidad
+Objeto <|-- AumentoExplocion
+Objeto <|-- MejoraCantidadBomba
+Objeto <|-- BotaPatear
+BotaPatear o-- Desplazamiento
+Desplazamiento o-- Bomba
+BomberMan *-- Menu
+Menu *-- Pause 
+Menu *-- Inicio
+BomberMan *--Posicion
+BotaVelocidad o-- Velocidad
+MejoraCantidadBomba o-- CantidadBomba
+AumentoExplocion o-- TamañoExplocion
+Objeto *-- Posicion
+
+
+@enduml
