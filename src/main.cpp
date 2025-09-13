@@ -8,5 +8,5 @@ int main(int argc, char const *argv[])
     foquito.Apagar();
     foquito.Encender();
 
-    return 0;
+        return 0;
 }
